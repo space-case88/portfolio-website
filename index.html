@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width" />
+        <title>Casey O'Neal</title>
+        <link rel="stylesheet" type="text/css" href="./CSS/my-portfolio-styles.css">
+    </head>
+
+    <body class="Background">
+
+        <div class="Navbar">
+            <a class="active" href="#Home">Home</a>        <!--Navbar-->
+            <a href="#About">About</a>
+            <a href="#GitHub">GitHub</a>
+            <a href="#Contact">Contact</a>
+        </div>
+    
+    <br>         <!--This provides a break between nav and first heading-->
+    <br>
+    
+    <!--This is for the video that plays in the background-->
+        <div id="Home">
+            <video autoplay muted loop id="Typing_Video">
+                <source src="./CSS/Video/Typing.mp4" type="video/mp4">
+                <!--Display message if the video does not work-->
+                Your browser does not support HTML5 video.
+            </video>
+        </div>
+
+        <!--video text-->
+        <div class="Video_Text">
+            <h1 class="white-text">Casey O'Neal: A Portfolio</h1>
+            <strong>
+                <p class="center">
+                    <q>As a kid, I was always into art at the same time as computers, and eventually I realised I was making more interesting stuff with my keyboard than with my hands. 
+                        <br>I really enjoyed modifying computer games more than playing them,
+                        <br>so that got me into programming.
+                    </q>
+                    <br> -Aaron Koblin
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </p>
+            </strong>
+            </h1>
+        </div>
+
+        <!--This is the About section-->
+        <div class="Row" id="About">
+            <!--Left Column-->
+            <div class="Column_2">
+                <img src="./CSS/images/moomin-haus.jpg" alt="GMK Moomin on the Haus">
+            </div>
+            <!--Right Column-->
+            <div class="Column_1">
+
+                <h1>About</h1>
+                <p>
+                    I am an aspiring software and video game developer with a passion for mechanical keyboards and many other things. I strive to always be able to make a lasting impression based on the output and quality of my work.
+                    <br>
+                    <br>I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>’s Software Developer Boot Camp, and trained and experienced in the following web and programming languages: HTML, CSS, JavaScript, SQL, C# and more.
+                    <br>
+                    <br>I am a full-stack developer and would love to work with you on your project. <a href="#Contact">Contact</a> me below!
+                </p>
+            </div>
+        </div>
+
+        <!--GitHub Section-->
+        <div class="Row" id="GitHub">
+            <!--Left COlumn-->
+            <div class="Column_1"></div>
+                <h1>GitHub</h1>
+                <p>
+                    You can view my coding projects on my GitHub here:
+                    <br>
+                    <p class="center"><a href="https://github.com/space-case88" target="_blank">Casey's Personal GitHub Profile</a></p>
+                </p>
+        </div>
+        <!--Right column-->
+        <div class="Column_2">
+            <a href="https://github.com/space-case88" target="_blank"><img src="./CSS/images/GitHub.png" alt="GitHub Logo"></a>
+        </div>
+    </div>
+
+    <!--Contact Section-->
+    <div class="Row" id="Contact">
+        <!--Contact Image column left-->
+        <div class="Column_2 Column_tall">
+            <img src="./CSS/images/neko-origami.jpg" alt="ePBT Origami on Neko">
+        </div>
+        <!--Contact form Right column-->
+        <div class="Column_1 Column_tall">
+            <h1>Contact</h1>
+            <!--This is where the form data will go but for now it is blank-->
+            <form action="" method="POST"><!--Post the end point of formspree in the action quotations-->
+                <label>Name:</label>
+                    <input type="text" placeholder="Please Enter your name here">
+                <label>Email:</label>
+                    <input type="text" id="Email" placeholder="Please enter your email here">
+                <label>Message:</label>
+                <input type="text" id="Message" name="Message" placeholder="Please write your message here">
+                <input type="submit" value="SUBMIT">
+            </form>
+        </div>
+    </div>
+
+    <!--Footer section-->
+    <footer>
+        <p>
+            <p class="center">&copy Prosper Consulting Inc., <a href="https://www.learncodinganywhere.com/" target="_blank">The Tech Academy</a></p>
+            <br>
+        </p>
+    </footer>
+    </body>
+</html>
