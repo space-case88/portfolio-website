@@ -1,181 +1,206 @@
 <!DOCTYPE html>
-<html>
-    
-    <!-- Head -->
+<html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width" />
-        <title>Casey O'Neal</title>
-        <link rel="shortcut icon" type="img/jpg" href="./CSS/images/coding_icon.png">
-        <link rel="stylesheet" type="text/css" href="./CSS/my-portfolio-styles1.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio Website</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/9ec96dfc18.js" crossorigin="anonymous"></script>
     </head>
-
-        <!-- Body -->
-        <body class="Background">   
-
-                    <!-- Navbar -->
-        <div class="Navbar">
-            <a class="active" href="#Home">Home</a>
-            <!-- New section added -->
-            <a href="#Slideshow">Slideshow</a>
-            <a href="#About">About</a>
-            <a href="#GitHub">GitHub</a>
-            <!-- Onclick and ondblclick functions added to open and close the contact form -->
-            <a onclick="openForm()" ondblclick="closeForm()" class="contact">Contact</a>
-        </div>
-
-            <!--This is for the video that plays in the background-->
-            <div id="Home">
-                <video autoplay muted loop id="Typing_Video">
-                    <source src="./CSS/Video/Typing.mp4" type="video/mp4">
-                    <!--Display message if the video does not work-->
-                    Your browser does not support HTML5 video.
-                </video>
+    <body>
+        <div id="header">
+            <div class="container">
+                <nav>
+                    <img src="Images/casey-oneal-main-logo-125x125px.png" class="logo">
+                    <ul id="sidemenu">
+                        <li><a href='#header'>Home</a></li>
+                        <li><a href='#about'>About</a></li>
+                        <li><a href='#services'>Skills</a></li>
+                        <li><a href='#portfolio'>Portfolio</a></li>
+                        <li><a href='#contact'>Contact</a></li>
+                        <i class="fas fa-times" onclick="closemenu()"></i>
+                    </ul>
+                    <i class="fas fa-bars" onclick="openmenu()"></i>
+                </nav>
+                <div class="header-text">
+                    <p>Programmer / Game Developer</p>
+                    <h1>Casey <span>O'Neal</span><br>Portland, Oregon</h1>
+                </div>
             </div>
-
-                    <!--video text-->
-        <div class="Video_Text">
-            <h1 class="white-text">Casey O'Neal: A Portfolio</h1>
-            <strong>
-                <p class="center">
-                    <q>As a kid, I was always into art at the same time as computers, and eventually I realised I was making more interesting stuff with my keyboard than with my hands. 
-                        <br>I really enjoyed modifying computer games more than playing them,
-                        <br>so that got me into programming.
-                    </q>
-                    <br> -Aaron Koblin
-                    <br>
-                    My name is Casey. Welcome to my portfolio website. This should aid you in your choice to utilize me as an asset in your endeavors.
-                    <br>
-                    <br>Thank you for stopping by and taking a look!
-                    <br>
-                </p>
-            </strong>
-            
         </div>
 
-                <!-- Slideshow section added -->
-                <div id="Slideshow">
-                    <div id="Slideshow_Background"> 
-                        <div id="Slideshow_Container">
-                            <!-- Slide 1 of 6 -->
-                            <div class="mySlides fade">
-                                <img class="Slideshow_Images" src="./CSS/images/PortfolioPic.jpg" alt="Picture of myself">
-                                <div class="text">Casey, your future developer!</div>
-                            </div>
-                            <!-- Slide 2 of 6 -->
-                            <div class="mySlides fade">
-                                <img class="Slideshow_Images" src="./CSS/images/HTML_CSS_and_JavaScript.jpeg" alt="HTML, CSS, and JS logos"> 
-                                <div class="text">I am a full-stack software developer,<br> trained in:<br>HTML, CSS, JavaScript,</div>
-                            </div>
-                            <!-- Slide 3 of 6 -->
-                            <div class="mySlides fade">
-                                <img class="Slideshow_Images" src="./CSS/images/C_Sharp_and_Dot_NET.png" alt="Python logo">
-                                <div class="text">I can develop in C#.</div>
-                            </div>
-                            <!-- Slide 4 of 6 -->
-                            <div class="mySlides fade">
-                                <img class="Slideshow_Images" src="./CSS/images/slide1.jpg" alt="C# logo">
-                                <div class="text">I am also a mechanical keyboard enthusiast!</div>
-                            </div>
-                            <!-- Slide 5 of 6 -->
-                            <div class="mySlides fade">
-                                <img class="Slideshow_Images" src="./CSS/images/UnityLogo.png" alt="Unity logo"> 
-                                <div class="text">I have experience using Unity to develop games.</div>
-                            </div>
-                            <!-- Slide 6 of 6 -->
-                            <div class="mySlides fade">
-                                <img class="Slideshow_Images" src="./CSS/images/UnrealLogo.png" alt="Replace with a picture of your choosing"> 
-                                <div class="text"><a class="white-text contact" onclick="openForm()">I can also develop in Unreal Engine.</a></div> 
-                            </div>
-                            <!-- Previous and next buttons -->
-                            <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
-                            <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+<!--------THIS IS THE ABOUT SECTION-------->
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src="Images/profilephoto1.JPG" width="400" height="">
+                    </div>
+                    <div class="about-col-2">
+                        <h1 class="sub-title"></h1>
+
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
                         </div>
-                        <br> <!-- Adds a space between the slideshow images and the dots -->
-        
-                        <!-- Slideshow dots (these are another way for users to navigate through the slideshow) -->
-                        <div style="text-align: center">
-                            <span class="dot" onclick="currentSlide(1)"></span>
-                            <span class="dot" onclick="currentSlide(2)"></span>
-                            <span class="dot" onclick="currentSlide(3)"></span> 
-                            <span class="dot" onclick="currentSlide(4)"></span> 
-                            <span class="dot" onclick="currentSlide(5)"></span> 
-                            <span class="dot" onclick="currentSlide(6)"></span> 
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>Unity and Unreal</span><br>Designing Websites and Video Games</li>
+                                <li><span>HTML/CSS/JavaScript</span><br>Web Design and Functionality</li>
+                                <li><span>Mechanical Keyboards</span><br>Mechanical Keyboard aesthetics and programming</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="experience">
+                            <ul>
+                                <li><span>This is a test</span><br>Designing Websites and Video Games</li>
+                                <li><span>HTML/CSS/JavaScript</span><br>Web Design and Functionality</li>
+                                <li><span>Mechanical Keyboards</span><br>Mechanical Keyboard aesthetics and programming</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>Unity and Unreal</span><br>Designing Websites and Video Games</li>
+                                <li><span>This is a test</span><br>Web Design and Functionality</li>
+                                <li><span>Mechanical Keyboards</span><br>Mechanical Keyboard builds</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-
-                        <!--This is the About section-->
-        <div class="Row" id="About">
-            <!--Left Column-->
-            <div class="Column_2">
-                <img src="./CSS/images/moomin-haus.jpg" alt="GMK Moomin on the Haus">
-            </div>
-            <!--Right Column-->
-            <div class="Column_1">
-
-                <h1>About</h1>
-                <p>
-                    Proficient in Unity, Unreal, C#, C++, HTML, CSS and JavaScript. I am a passionate developer with a desire to keep learning and building. Here is a copy of my <a href="https://docs.google.com/document/d/1zTorcIjfVoCkHUipGBI6gyD2-6XxHvlGrU7RBQUqwhw/edit" target="_blank">Resume.</a>
-                    <br>
-                    <br>I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>’s Software Developer Boot Camp, and trained and experienced in the following web and programming languages: HTML, CSS, JavaScript, SQL, C#, C++ and more. I am also experienced in Unity Engine and Unreal Engine.
-                    <br><a href="#Contact">Contact</a> me below!
-                </p>
             </div>
         </div>
 
-                <!--GitHub and LinkedIn Section-->
-        <div class="Row" id="GitHub">
-            <!--Left COlumn-->
-            <div class="Column_1">
-                <h1>GitHub</h1>
-                <p>
-                    You can view my coding projects on my GitHub here:
-                    <br>
-                <p class="center"><a href="https://github.com/space-case88" target="_blank">Casey's Personal GitHub Profile</a></p>
-                </p>
-
-                
-                <!--This is the link to my LinkedIn profile-->
-                <h1>LinkedIn</h1>
-                <p>
-                    Please reach out to me on LinkedIn!
-                    <br>
-                <p class="center"><a href="https://www.linkedin.com/in/casey-o-neal-66515326b/" target="_blank">Casey's Personal LinkedIn Profile</a></p>
-                </p>
+<!-------------------This is the skills section---------------------->
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">Skills</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web/Software Development</h2>
+                <p>I am an accomplished web developer with a talent for aesthetics and design. My goal is to create websites that are easy to use and pleasing to the eye. I can guarantee that I would be a great choice for you web needs.</p>
+                <a href="#">Learn More</a>
             </div>
+            <div>
+                <i class="fa-solid fa-gamepad"></i>
+                <h2>Game Development</h2>
+                <p>I use Unity 2D & 3D as well as Unreal Engine to develop cohesive and functional games.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div>
+                <i class="fa-regular fa-keyboard"></i>
+                <h2>Custom Keyboard Builds</h2>
+                <p>As a long time custom keyboard enthusiast, I know how to make your experience feel as premium as possible with whatever build or layout you want.</p>
+                <a href="#">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
 
-            <!--Right column-->
-            <div class="Column_2">
-                <a href="https://github.com/space-case88" target="_blank"><img src="./CSS/images/GitHub.png" alt="GitHub Logo"></a>
+<!-----------Portfolio Section------------>
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">Portfolio</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="Gifs/SpaceInvadersClip.gif">
+                <div class="layer">
+                    <h3>Space Invaders</h3>
+                    <p>I made this Space Invaders like game in Unity 2d. As you can see, this game features custom animations made by myself as well as win and lose conditions. This is also showcasing the enemy behavior and pathing. All code was done in C#.</p>
+                    <a href="https://github.com/space-case88/SpaceInvader"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="Gifs/TicTacToe.gif">
+                <div class="layer">
+                    <h3>Tic Tac Toe</h3>
+                    <p>This is the classic Tic Tac Toe! I made this using HTML, CSS and JavaScript. It is feature complete using sound effects and some animation.</p>
+                    <a href="https://github.com/space-case88/TicTacToe"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="Gifs/Calendar.gif">
+                <div class="layer">
+                    <h3>Calendar Web Application</h3>
+                    <p>I made this Calendar for myself and continue to work on it adding new features whenever I get a chance. You can see here than it keeps the date accurately and you can also add or subtract events on specific days.</p>
+                    <a href="https://github.com/space-case88/Calendar"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="Gifs/Calculator.gif">
+                <div class="layer">
+                    <h3>Calculator</h3>
+                    <p>I made this calculator using HTML, CSS and JavaScript. I especially like the color fade on the buttons.</p>
+                    <a href="https://github.com/space-case88/Javascript-Projects/tree/main/Calculator-JS-project"><i class="fas fa-external-link-alt"></i></a>
+                </div>
             </div>
         </div>
 
-                    <!-- Contact form -->
-        <div id="Contact">
-            <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
-            <div class="form-popup" id="myForm">
-                 <form action="https://formspree.io/info@learncodinganywhere.com" method="POST" class="form-container"> <!-- Here we are using a free online service from https://formspree.io/ to send our contact form to an email address of our choosing - note: it will not run unless live on the internet, you have to push it to your online website first -->
-                     <h1>Contact</h1>
-                     <label for="name"><b>Name</b></label>
-                       <input type="text" placeholder="Type your name here" name="name" required>
-                     <label for="phone"><b>Phone</b></label>
-                       <input type="text" placeholder="Type your phone number here" name="phone">
-                     <label for="email"><b>Email</b></label>		
-                       <input type="text" placeholder="Type your email address here" name="email" required>
-                     <label for="message"><b>Message</b></label>
-                       <input type="text" placeholder="Type your message here" name="message">
-          
-                     <button type="submit" class="btn">SUBMIT</button>
-                     <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
-                 </form>
+        <a href="https://github.com/space-case88?tab=repositories" class="btn">All Repositories</a>
+
+    </div>
+</div>
+
+<!-----------------CONTACT FORM SECTION------------------>
+<div id="contact">
+    <div class="container">
+        <div id="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact</h1>
+                <p><i class="fa-regular fa-paper-plane"></i> caseyd.oneal@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> (505) 306-7029</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/casey-o-neal-66515326b/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/space-case88"><i class="fa-brands fa-square-github"></i></a>
+                </div>
+                <a href="Images/CaseyO'NealResume.pdf" download class="btn btn2">Download Resume</a>
             </div>
-         </div>
-         
-         <!-- Footer section -->
-         <footer>
-                 <p class="center">&copy Prosper Consulting Inc., <a href="https://www.learncodinganywhere.com/" target="_blank">The Tech Academy</a></p><br>
-         </footer>
-         <script src="./JS/my-portfolio.js"></script>
-     </body>
- </html>
+            <div class="contact-right">
+                <form>
+                    <input type="text" name="Name" placeholder="Name" required>
+                    <input type="email" name="Email" placeholder="Email" required>
+                    <textarea name="Message" rows="6" placeholder="Leave a Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>This portfolio was made by Casey O'Neal. Thanks for taking a look! <i class="fa-solid fa-heart"></i></p>
+    </div>
+</div>
+
+        <script>
+
+            var tablinks = document.getElementsByClassName("tab-links");
+            var tabcontents = document.getElementsByClassName("tab-contents");
+
+            function opentab(tabname){
+                for(tablink of tablinks){
+                    tablink.classList.remove("active-link");
+                }
+                for(tabcontent of tabcontents){
+                    tabcontent.classList.remove("active-tab");
+                }
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tabname).classList.add("active-tab");
+            }
+
+        </script>
+
+        <Script>
+            
+            var sidemenu = document.getElementById("sidemenu");
+
+            function openmenu(){
+                sidemenu.style.right = "0";
+            }
+            function closemenu(){
+                sidemenu.style.right = "-200px";
+            }
+
+        </Script>
+
+    </body>
+</html>
